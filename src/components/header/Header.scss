@@ -1,0 +1,105 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FAFAFA;
+    z-index: 1000;
+}
+
+.nav-top {
+    padding: 12px 0;
+    .container {
+        display: flex;
+        justify-content: center;
+        column-gap: 8px;
+        & > p {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            color: #FAFAFA;
+        }
+        & > p:last-child {
+            text-decoration: underline;
+            cursor: pointer;
+        } 
+        @media (max-width: 576px) {
+            & > p {
+                font-size: 8px;
+                text-align: center;
+            } 
+            & > p:last-child {
+                display: none;
+            }
+        }
+    }
+    @media (max-width: 576px) {
+        padding: 8px 0;
+    }
+    background-color: #000;
+}
+
+.navbar {
+    padding: 48px 0 24px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        column-gap: 12px;
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    &-middle {
+        display: flex;
+        column-gap: 48px;
+        li:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+    &-right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        column-gap: 24px;
+        &-input {
+            position: relative;
+            input {
+                padding: 7px 60px 7px 20px;
+                background-color: #F5F5F5;
+                border: none;
+                border-radius: 4px;
+            }
+            svg {
+                position: absolute;
+                top: 3px;
+                right: 10px;
+                font-size: 24px;
+            }
+            @media (max-width: 576px) {
+                display: none;
+            }
+        }
+        .wishlist, .cart {
+            svg {
+                font-size: 22px;
+            }
+        }
+        .hamburger {
+            display: none;
+            font-size: 24px;
+        }
+        @media (max-width: 576px) {
+            .hamburger {
+                display: block;
+            }
+        }
+    }
+    @media (max-width: 576px) {
+        padding-top: 36px;
+    }
+}
