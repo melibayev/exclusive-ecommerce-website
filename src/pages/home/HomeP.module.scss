@@ -1,14 +1,10 @@
 // Home Banner Styles (start)
 #home_banner {
   padding-top: 180px;
-  padding-bottom: 50px;
   background-color: black;
-  @media (max-width: 578px) {
-    padding-bottom: 100px;
-  }
   @media (max-width: 444px) {
     padding-top: 160px;
-    height: 100vh;
+    padding-bottom: 60px;
   }
 }
 
