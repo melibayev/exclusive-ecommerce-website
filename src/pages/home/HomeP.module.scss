@@ -1,21 +1,78 @@
 // Home Banner Styles (start)
 #home_banner {
-  padding-top: 200px;
+  padding-top: 180px;
+  background-color: black;
+  @media (max-width: 768px) {
+    height: 100vh;
+  }
   @media (max-width: 576px) {
     padding-top: 160px;
   }
 }
 
 .home_banner {
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  color: #f5f5f5;
+  &_info {
+    padding: 58px 64px;
+    padding-right: 0;
+    &_logo {
+      display: flex;
+      align-items: center;
+      column-gap: 24px;
+      margin-bottom: 20px;
+      p {
+        font-size: 16px;
+        color: #f5f5f5;
+      }
+    }
+    h1 {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 40px;
+      letter-spacing: 1.92px;
+      margin-bottom: 22px;
+      @media (max-width: 992px) {
+        font-size: 24px;
+        line-height: 30px;
+      }
+      @media (max-width: 467px) {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+    & > p {
+      display: inline-block;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #f5f5f5;
+      cursor: pointer;
+    }
+    @media (max-width: 824px) {
+      padding: 24px 48px;
+    }
+    @media (max-width: 578px) {
+      padding: 16px;
+    }
+  }
+  &_img {
+    padding-top: 16px;
+    text-align: center;
+    @media (max-width: 578px) {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  @media (max-width: 824px) {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    justify-content: center;
   }
 }
 
 // Home Banner Styles (end)
-
 
 // products on sale (start)
 #fresh_products {
@@ -33,7 +90,7 @@
     margin: 0 auto;
     margin-top: 60px;
     padding: 0 20px;
-    background-color: rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -67,7 +124,7 @@
   h2 {
     font-size: 36px;
     font-weight: 600;
-    line-height: 48px; 
+    line-height: 48px;
     letter-spacing: 1.44px;
   }
   @media (max-width: 850px) {
@@ -100,7 +157,7 @@
     margin-top: 60px;
     padding: 16px 48px;
     border-radius: 4px;
-    color: #FAFAFA;
+    color: #fafafa;
     background-color: #db4444;
   }
   @media (max-width: 578px) {
@@ -121,30 +178,29 @@
   padding: 14px;
   font-size: 20px;
   border-radius: 50%;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   @media (max-width: 576px) {
-    display: none; 
+    display: none;
   }
 }
 .nextArrow {
   right: calc(50% - 570px);
   @media (max-width: 1150px) {
-    right: 2%; 
+    right: 2%;
   }
 }
 
 .prevArrow {
   right: calc(50% - 500px);
   @media (max-width: 1150px) {
-    right: 10%; 
+    right: 10%;
   }
   @media (max-width: 768px) {
-    right: 12%; 
+    right: 12%;
   }
 }
 
 // products on sale (end)
-
 
 // Categories (start)
 #categories {
@@ -153,10 +209,10 @@
 
 .categories {
   &__title {
-      display: flex;
-      align-items: center;
-      column-gap: 16px;
-      margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    margin-bottom: 24px;
     div {
       width: 20px;
       height: 40px;
@@ -176,7 +232,7 @@
   &__subtitle {
     font-size: 36px;
     font-weight: 600;
-    line-height: 48px; 
+    line-height: 48px;
     letter-spacing: 1.44px;
     margin-bottom: 60px;
     @media (max-width: 578px) {
@@ -196,24 +252,24 @@
   padding: 14px;
   font-size: 20px;
   border-radius: 50%;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   @media (max-width: 576px) {
-    display: none; 
+    display: none;
   }
 }
 .nextArrowForCategories {
   right: calc(50% - 570px);
   @media (max-width: 1150px) {
-    right: 2%; 
+    right: 2%;
   }
 }
 
 .prevArrowForCategories {
   right: calc(50% - 500px);
   @media (max-width: 1150px) {
-    right: 10%; 
+    right: 10%;
   }
   @media (max-width: 768px) {
-    right: 12%; 
+    right: 12%;
   }
 }

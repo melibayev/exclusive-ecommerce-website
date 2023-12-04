@@ -1,10 +1,11 @@
 import Countdown from "react-countdown";
+import Slider from "react-slick";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import styles from "./HomeP.module.scss";
-import FRAME from "../../assets/images/phone_frame.png";
+import IPHONE from "../../assets/images/iphone.png";
+import APPLE from '../../assets/images/logo.png'
 import { categories, products } from "../../data";
 import Product from "../../components/products";
-import Slider from "react-slick";
 import Category from "../../components/categories";
 
 // countdown settings
@@ -186,14 +187,6 @@ var settings = {
         infinite: true,
       },
     },
-    {
-      breakpoint: 578,
-      settings: {
-        slidesToShow: 2.12,
-        slidesToScroll: 1,
-        infinite: true,
-      },
-    },
   ],
 };
 
@@ -221,7 +214,7 @@ var settings_for_categories = {
     {
       breakpoint: 578,
       settings: {
-        slidesToShow: 2.5,
+        slidesToShow: 2,
         slidesToScroll: 1,
         infinite: true,
       },
@@ -236,7 +229,17 @@ const HomeP = () => {
       <section id={styles.home_banner}>
         <div className="container">
           <div className={styles.home_banner}>
-            <img src={FRAME} alt="" />
+              <div className={styles.home_banner_info}>
+                <div className={styles.home_banner_info_logo}>
+                  <img src={APPLE} alt="" />
+                  <p>Iphone Series</p>
+                </div>
+                <h1>Get $200–$650 in credit toward iPhone 15 when you trade in an iPhone 11 or higher.</h1>
+                <p>Shop Now</p>
+              </div>
+              <div className={styles.home_banner_img}>
+                  <img src={IPHONE} alt="" />
+              </div>
           </div>
         </div>
       </section>

@@ -94,6 +94,10 @@ nav {
         }
         .hamburger {
             display: none;
+            color: #000;
+            svg {
+                fill: #000;
+            }
             font-size: 24px;
         }
         @media (max-width: 576px) {
