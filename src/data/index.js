@@ -15,6 +15,20 @@ import product14 from '../assets/images/data/pr14.png'
 import product15 from '../assets/images/data/pr15.png'
 import product16 from '../assets/images/data/pr16.png'
 
+import category1 from '../assets/images/data/cat1.svg'
+import category2 from '../assets/images/data/cat2.svg'
+import category3 from '../assets/images/data/cat3.svg'
+import category4 from '../assets/images/data/cat4.svg'
+import category5 from '../assets/images/data/cat5.svg'
+import category6 from '../assets/images/data/cat6.svg'
+
+import { IoIosPhonePortrait } from "react-icons/io";
+import { RiComputerLine } from "react-icons/ri";
+import { BsSmartwatch } from "react-icons/bs";
+import { IoCameraOutline } from "react-icons/io5";
+import { CiHeadphones } from "react-icons/ci";
+import { IoGameControllerOutline } from "react-icons/io5";
+
 
 export const products = [
     {
@@ -121,5 +135,38 @@ export const products = [
         img: product16,
         price: '960$',
         rating: 5,
+    },
+]
+
+export const categories = [
+    {
+        id: 1,
+        name: 'Phones',
+        img: <IoIosPhonePortrait />
+    },
+    {
+        id: 2,
+        name: 'Computers',
+        img: <RiComputerLine />
+    },
+    {
+        id: 3,
+        name: 'SmartWatch',
+        img: <BsSmartwatch />
+    },
+    {
+        id: 4,
+        name: 'Camera',
+        img: <IoCameraOutline />
+    },
+    {
+        id: 5,
+        name: 'HeadPhones',
+        img: <CiHeadphones />
+    },
+    {
+        id: 6,
+        name: 'Gaming',
+        img: <IoGameControllerOutline />
     },
 ]

@@ -30,6 +30,7 @@ const Header = () => {
                 <NavLink><li>Home</li></NavLink>
                 <NavLink><li>Contact</li></NavLink>
                 <NavLink><li>About</li></NavLink>
+                <NavLink><li>Sign Up</li></NavLink>
             </ul>
             <ul className="navbar-right">
                 <li className="navbar-right-input"><input type="text" placeholder="What are you looking for?" /><CiSearch /></li>

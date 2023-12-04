@@ -44,10 +44,13 @@ nav {
     border-bottom: 1px solid rgba(0, 0, 0, .3);
     .container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: .6fr 1fr 1fr;
         align-items: center;
         column-gap: 12px;
-        @media (max-width: 768px) {
+        @media (max-width: 1014px) {
+            grid-template-columns: .6fr 2fr 1fr;
+        }
+        @media (max-width: 888px) {
             grid-template-columns: 1fr 1fr;
         }
     }
@@ -57,7 +60,7 @@ nav {
         li:hover {
             text-decoration: underline;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 888px) {
             display: none;
         }
     }
