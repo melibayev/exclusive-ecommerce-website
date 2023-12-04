@@ -7,6 +7,7 @@ import APPLE from '../../assets/images/logo.png'
 import { categories, products } from "../../data";
 import Product from "../../components/products";
 import Category from "../../components/categories";
+import MUSICPRODUCT from '../../assets/images/data/pr5.png'
 
 // countdown settings
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -121,9 +122,119 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
     );
   }
 };
+const categoryRenderer = ({ days, hours, minutes, seconds, completed }) => {
+  if (completed) {
+    return (
+      <span style={{ fontSize: "2rem", color: "green" }}>Sale is over!</span>
+    );
+  } else {
+    const formattedDays = String(days).padStart(2, "0");
+    const formattedHours = String(hours).padStart(2, "0");
+    const formattedMinutes = String(minutes).padStart(2, "0");
+    const formattedSeconds = String(seconds).padStart(2, "0");
+    return (
+      <div
+        className={styles["categories-countdown-container"]}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          columnGap: "50px ",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textTransform: "uppercase",
+          }}
+        >
+          <p style={{ fontSize: "24px", fontWeight: "500" }}>{formattedDays}</p>
+          <p
+            className={styles["categories-countdown-numbers"]}
+            style={{
+              fontSize: "12px",
+              fontWeight: "600",
+              letterSpacing: "1.28px",
+              lineHeight: "30px",
+            }}
+            >
+              days
+          </p>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textTransform: "uppercase",
+          }}
+        >
+          <p style={{ fontSize: "24px", fontWeight: "500" }}>{formattedHours}</p>
+          <p
+            className={styles["categories-countdown-numbers"]}
+            style={{
+              fontSize: "12px",
+              fontWeight: "600",
+              letterSpacing: "1.28px",
+              lineHeight: "30px",
+            }}
+          >
+            hours
+          </p>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textTransform: "uppercase",
+          }}
+        >
+          <p style={{ fontSize: "24px", fontWeight: "500" }}>{formattedMinutes}</p>
+          <p
+            className={styles["categories-countdown-numbers"]}
+            style={{
+              fontSize: "12px",
+              fontWeight: "600",
+              letterSpacing: "1.28px",
+              lineHeight: "30px",
+            }}
+          >
+            minutes
+          </p>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textTransform: "uppercase",
+          }}
+        >
+          <p style={{ fontSize: "24px", fontWeight: "500" }}>{formattedSeconds}</p>
+          <p
+            className={styles["categories-countdown-numbers"]}
+            style={{
+              fontSize: "12px",
+              fontWeight: "600",
+              letterSpacing: "1.28px",
+              lineHeight: "30px",
+            }}
+          >
+            seconds
+          </p>
+        </div>
+      </div>
+    );
+  }
+};
 
 // products on sale
 const saleProducts = products.slice(0, 8);
+
+// best selling products
+const bestSellingProducts = products.slice(-6)
 
 // Carousel settings
 function NextArrow(props) {
@@ -256,7 +367,7 @@ const HomeP = () => {
             <div className={styles.fresh_products__subtitle}>
               <h2>Flash Sales</h2>
               <Countdown
-                date="2023-12-05T03:00:03"
+                date={Date.now() + 700_000_000}
                 zeroPadTime={2}
                 renderer={renderer}
               />
@@ -297,6 +408,51 @@ const HomeP = () => {
         </div>
       </section>
     {/* CATEGORIES (end) */}
+
+    {/* BEST SELLING PRODUCTS (start) */}
+    <section id={styles.best_selling}>
+      <div className="container">
+        <div className={styles.best_selling}>
+          <div className={styles.best_selling__title}>
+            <div></div>
+            <h5>This Month</h5>
+          </div>
+          <div className={styles.best_selling__subtitle}>
+              <h1>Best Selling Products</h1>
+              <button>View All</button>
+          </div>
+          <div className={styles.best_selling__products}>
+              {bestSellingProducts.map(card => (
+                <Product {...card}/>
+              ))}
+          </div>
+        </div>
+      </div>
+    </section>
+    {/* BEST SELLING PRODUCTS (end) */}
+
+    {/* CATEGORIES AD CARD (start) */}
+    <div className={styles.categories_ad_card}>
+      <div className="container">
+        <div className={styles.categories_ad_card_container}>
+          <div className={styles.categories_ad_card_left}>
+              <span>Categories</span>
+              <h1>Enhance Your Music Experience</h1>
+              <Countdown
+                date={Date.now() + 200_000_000}
+                zeroPadTime={2}
+                renderer={categoryRenderer}
+              />
+              <button>Buy Now!</button>
+          </div>
+          <div className={styles.categories_ad_card_right}>
+              <img src={MUSICPRODUCT} alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    {/* CATEGORIES AD CARD (end) */}
+
     </>
   );
 };

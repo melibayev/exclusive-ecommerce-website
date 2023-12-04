@@ -10,11 +10,14 @@
         border-radius: 4px;
         overflow: hidden;
         background-color: #F5F5F5;
-        @media (max-width: 576px) {
-            height: 200px;
+        @media (max-width: 768px) {
             img {
                 width: 100px;
             }
+        }
+        @media (max-width: 576px) {
+            height: 200px;
+            padding: 20px;
         }
     }
     &:hover {

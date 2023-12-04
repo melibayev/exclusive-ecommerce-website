@@ -2,11 +2,9 @@
 #home_banner {
   padding-top: 180px;
   background-color: black;
-  @media (max-width: 768px) {
-    height: 100vh;
-  }
-  @media (max-width: 576px) {
+  @media (max-width: 444px) {
     padding-top: 160px;
+    height: 100vh;
   }
 }
 
@@ -86,7 +84,7 @@
   &_border_line {
     display: block;
     max-width: 1140px;
-    height: 1px;
+    height: 0.5px;
     margin: 0 auto;
     margin-top: 60px;
     padding: 0 20px;
@@ -208,6 +206,8 @@
 }
 
 .categories {
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   &__title {
     display: flex;
     align-items: center;
@@ -273,3 +273,157 @@
     right: 12%;
   }
 }
+
+// Best selling products (start)
+#best_selling {
+  padding-top: 70px;
+}
+
+.best_selling {
+  &__title {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    margin-bottom: 24px;
+    div {
+      width: 20px;
+      height: 40px;
+      border-radius: 6px;
+      background-color: #db4444;
+    }
+    h5 {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+      color: #db4444;
+    }
+    @media (max-width: 578px) {
+      margin-bottom: 12px;
+    }
+  }
+  &__subtitle {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    h1 {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 48px;
+      letter-spacing: 1.44px;
+    }
+    margin-bottom: 60px;
+    & > button {
+      padding: 16px 48px;
+      border-radius: 4px;
+      color: #fafafa;
+      background-color: #db4444;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+        line-height: 30px;
+        max-width: 180px;
+      }
+      & > button {
+        padding: 12px 32px;
+      }
+      margin-bottom: 30px;
+    }
+  }
+  &__products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 24px;
+    @media (max-width: 1100px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+// Best selling products (end)
+
+// Categories ad card (start)
+.categories_ad_card {
+  margin-top: 140px;
+  color: #f5f5f5;
+  &_left {
+    span {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 32px;
+      color: #0f6;
+    }
+    h1 {
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 60px; /* 125% */
+      letter-spacing: 1.92px;
+      margin-bottom: 32px;
+    }
+    button {
+      padding: 16px 48px;
+      color: #FAFAFA;
+      background-color: #0f6;
+      border-radius: 4px;
+    }
+    @media (max-width: 587px) {
+      h1 {
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 16px;
+      }
+        button {
+          padding: 12px 32px;
+        }
+    }
+  }
+  &_right {
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    @media (max-width: 400px) {
+      text-align: center;
+      img {
+        width: 70%;
+      }
+    }
+  }
+  @media (max-width: 578px) {
+    margin-top: 80px;
+    background-color: #000;
+  }
+}
+
+.categories_ad_card_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 69px 56px;
+  background-color: #000;
+  @media (max-width: 888px) {
+    grid-template-columns: 1fr;
+    row-gap: 34px;
+  }
+  @media (max-width: 587px) {
+    padding: 25px;
+  }
+}
+
+.categories-countdown-container {
+  margin-bottom: 40px;
+  @media (max-width: 578px) {
+    column-gap: 18px !important;
+    margin-bottom: 16px;
+  }
+}
+
+// Categories ad card (end)
