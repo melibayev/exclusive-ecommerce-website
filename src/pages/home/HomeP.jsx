@@ -1,13 +1,19 @@
 import Countdown from "react-countdown";
 import Slider from "react-slick";
-import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import styles from "./HomeP.module.scss";
+import { categories, products } from "../../data";
+
+// IMAGES AND ICONS
+import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import IPHONE from "../../assets/images/iphone.png";
 import APPLE from '../../assets/images/logo.png'
-import { categories, products } from "../../data";
 import Product from "../../components/products";
 import Category from "../../components/categories";
 import MUSICPRODUCT from '../../assets/images/data/pr5.png'
+import NEWPRODUCT1 from '../../assets/images/news1.png'
+import NEWPRODUCT2 from '../../assets/images/news2.png'
+import NEWPRODUCT3 from '../../assets/images/news3.png'
+import NEWPRODUCT4 from '../../assets/images/news4.png'
 
 // countdown settings
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -452,7 +458,60 @@ const HomeP = () => {
       </div>
     </div>
     {/* CATEGORIES AD CARD (end) */}
-
+    
+    {/* NEW PRODUCTS (start) */}
+    <section id={styles.new_products}>
+      <div className="container">
+        <div className={styles.new_products}>
+          <div className={styles.new_products__title}>
+          <div></div>
+            <h5>Featured</h5>
+          </div>
+          <div className={styles.new_products__subtitle}>
+            New Arrival
+          </div>
+          <div className={styles.new_products_items}>
+          <div className={styles.new_products_items_left}>
+              <img src={NEWPRODUCT1} alt="" />
+              <div className={styles.product_info}>
+                <h4>PlayStation 5</h4>
+                <p>Black and White version of the PS5 coming out on sale.</p>
+                <p>Shop Now</p>
+              </div>
+          </div>
+          <div className={styles.new_products_items_right}>
+            <div className={styles.new_products_item_top}>
+              <img src={NEWPRODUCT2} alt="" />
+              <div className={styles.product_info}>
+                <h4>Women’s Collections</h4>
+                <p>Featured woman collections that give you another vibe.</p>
+                <p>Shop Now</p>
+              </div>
+            </div>
+            <div className={styles.new_products_item_container}>
+              <div className={styles.new_products_item_left_bottom}>
+                <img src={NEWPRODUCT3} alt="" />
+                <div className={styles.product_info}>
+                <h4>Speakers</h4>
+                <p>Amazon wireless speakers</p>
+                <p>Shop Now</p>
+              </div>
+                </div>
+              <div className={styles.new_products_item_right_bottom}>
+                <img src={NEWPRODUCT4} alt="" />
+                <div className={styles.product_info}>
+                <h4>Perfume</h4>
+                <p>GUCCI INTENSE OUD EDP</p>
+                <p>Shop Now</p>
+              </div>
+                </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {/* NEW PRODUCTS (end) */}
     </>
   );
 };
