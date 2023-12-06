@@ -1,0 +1,122 @@
+footer {
+  padding: 80px 0;
+  color: #fafafa;
+  background-color: black;
+  .container {
+    display: grid;
+    grid-template-columns: 3fr 0.8fr;
+    column-gap: 80px;
+    @media (max-width: 1000px) {
+      grid-template-columns: 1fr;
+      row-gap: 24px;
+    }
+  }
+}
+
+.footer {
+  &_links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: flex-start;
+    column-gap: 80px;
+    &_items {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+    }
+    &_item {
+        position: relative;
+        h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        h4 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        input {
+          padding: 12px 16px;
+          border-radius: 4px;
+          color: #fafafa;
+          border: 1.5px solid var(--Text, #fafafa);
+          background-color: transparent;
+        }
+        svg {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+    @media (max-width: 1000px) {
+      grid-template-columns: 1fr 1fr;
+      &_item {
+        svg {
+            left: 160px;
+        }
+      }
+    }
+    @media (max-width: 578px) {
+      row-gap: 24px;
+      text-align: center;
+      grid-template-columns: 1fr;
+      &_item {
+        h4 {
+          font-size: 16px;
+        }
+        input {
+            font-size: 16px;
+        }
+        svg {
+            left: inherit;
+            top: 14px;
+            right: calc(50% - 90px);
+        }
+      }
+    }
+  }
+  &_social_medias {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    h4 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 578px) {
+      text-align: center;
+      row-gap: 10px;
+      h4 {
+        font-size: 16px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.social_media_items {
+  display: flex;
+  column-gap: 8px;
+  img {
+    cursor: pointer;
+  }
+  &_left {
+    img {
+      width: 100%;
+    }
+  }
+  &_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    img {
+      width: 100%;
+    }
+  }
+  @media (max-width: 578px) {
+    justify-content: center;
+  }
+}

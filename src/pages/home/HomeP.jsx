@@ -6,14 +6,18 @@ import { categories, products } from "../../data";
 // IMAGES AND ICONS
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import IPHONE from "../../assets/images/iphone.png";
-import APPLE from '../../assets/images/logo.png'
+import APPLE from "../../assets/images/logo.png";
 import Product from "../../components/products";
 import Category from "../../components/categories";
-import MUSICPRODUCT from '../../assets/images/data/pr5.png'
-import NEWPRODUCT1 from '../../assets/images/news1.png'
-import NEWPRODUCT2 from '../../assets/images/news2.png'
-import NEWPRODUCT3 from '../../assets/images/news3.png'
-import NEWPRODUCT4 from '../../assets/images/news4.png'
+import MUSICPRODUCT from "../../assets/images/data/pr5.png";
+import NEWPRODUCT1 from "../../assets/images/news1.png";
+import NEWPRODUCT2 from "../../assets/images/news2.png";
+import NEWPRODUCT3 from "../../assets/images/news3.png";
+import NEWPRODUCT4 from "../../assets/images/news4.png";
+
+import ICON1 from "../../assets/images/icon1.svg";
+import ICON2 from "../../assets/images/icon2.svg";
+import ICON3 from "../../assets/images/icon3.svg";
 
 // countdown settings
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -145,16 +149,14 @@ const categoryRenderer = ({ days, hours, minutes, seconds, completed }) => {
           display: "flex",
           alignItems: "center",
           columnGap: "50px ",
-        }}
-      >
+        }}>
         <div
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             textTransform: "uppercase",
-          }}
-        >
+          }}>
           <p style={{ fontSize: "24px", fontWeight: "500" }}>{formattedDays}</p>
           <p
             className={styles["categories-countdown-numbers"]}
@@ -163,9 +165,8 @@ const categoryRenderer = ({ days, hours, minutes, seconds, completed }) => {
               fontWeight: "600",
               letterSpacing: "1.28px",
               lineHeight: "30px",
-            }}
-            >
-              days
+            }}>
+            days
           </p>
         </div>
         <div
@@ -174,9 +175,10 @@ const categoryRenderer = ({ days, hours, minutes, seconds, completed }) => {
             flexDirection: "column",
             alignItems: "center",
             textTransform: "uppercase",
-          }}
-        >
-          <p style={{ fontSize: "24px", fontWeight: "500" }}>{formattedHours}</p>
+          }}>
+          <p style={{ fontSize: "24px", fontWeight: "500" }}>
+            {formattedHours}
+          </p>
           <p
             className={styles["categories-countdown-numbers"]}
             style={{
@@ -184,8 +186,7 @@ const categoryRenderer = ({ days, hours, minutes, seconds, completed }) => {
               fontWeight: "600",
               letterSpacing: "1.28px",
               lineHeight: "30px",
-            }}
-          >
+            }}>
             hours
           </p>
         </div>
@@ -195,9 +196,10 @@ const categoryRenderer = ({ days, hours, minutes, seconds, completed }) => {
             flexDirection: "column",
             alignItems: "center",
             textTransform: "uppercase",
-          }}
-        >
-          <p style={{ fontSize: "24px", fontWeight: "500" }}>{formattedMinutes}</p>
+          }}>
+          <p style={{ fontSize: "24px", fontWeight: "500" }}>
+            {formattedMinutes}
+          </p>
           <p
             className={styles["categories-countdown-numbers"]}
             style={{
@@ -205,8 +207,7 @@ const categoryRenderer = ({ days, hours, minutes, seconds, completed }) => {
               fontWeight: "600",
               letterSpacing: "1.28px",
               lineHeight: "30px",
-            }}
-          >
+            }}>
             minutes
           </p>
         </div>
@@ -216,9 +217,10 @@ const categoryRenderer = ({ days, hours, minutes, seconds, completed }) => {
             flexDirection: "column",
             alignItems: "center",
             textTransform: "uppercase",
-          }}
-        >
-          <p style={{ fontSize: "24px", fontWeight: "500" }}>{formattedSeconds}</p>
+          }}>
+          <p style={{ fontSize: "24px", fontWeight: "500" }}>
+            {formattedSeconds}
+          </p>
           <p
             className={styles["categories-countdown-numbers"]}
             style={{
@@ -226,8 +228,7 @@ const categoryRenderer = ({ days, hours, minutes, seconds, completed }) => {
               fontWeight: "600",
               letterSpacing: "1.28px",
               lineHeight: "30px",
-            }}
-          >
+            }}>
             seconds
           </p>
         </div>
@@ -240,7 +241,7 @@ const categoryRenderer = ({ days, hours, minutes, seconds, completed }) => {
 const saleProducts = products.slice(0, 8);
 
 // best selling products
-const bestSellingProducts = products.slice(-6)
+const bestSellingProducts = products.slice(-6);
 
 // Carousel settings
 function NextArrow(props) {
@@ -342,27 +343,30 @@ var settings_for_categories = {
 const HomeP = () => {
   return (
     <>
-    {/* HOME BANNER (start) */}
+      {/* HOME BANNER (start) */}
       <section id={styles.home_banner}>
         <div className="container">
           <div className={styles.home_banner}>
-              <div className={styles.home_banner_info}>
-                <div className={styles.home_banner_info_logo}>
-                  <img src={APPLE} alt="" />
-                  <p>Iphone Series</p>
-                </div>
-                <h1>Get $200–$650 in credit toward iPhone 15 when you trade in an iPhone 11 or higher.</h1>
-                <p>Shop Now</p>
+            <div className={styles.home_banner_info}>
+              <div className={styles.home_banner_info_logo}>
+                <img src={APPLE} alt="" />
+                <p>Iphone Series</p>
               </div>
-              <div className={styles.home_banner_img}>
-                  <img src={IPHONE} alt="" />
-              </div>
+              <h1>
+                Get $200–$650 in credit toward iPhone 15 when you trade in an
+                iPhone 11 or higher.
+              </h1>
+              <p>Shop Now</p>
+            </div>
+            <div className={styles.home_banner_img}>
+              <img src={IPHONE} alt="" />
+            </div>
           </div>
         </div>
       </section>
-    {/* HOME BANNER (end) */}
+      {/* HOME BANNER (end) */}
 
-    {/* SALE PRODUCTS (start) */}
+      {/* SALE PRODUCTS (start) */}
       <section id={styles.fresh_products}>
         <div className={styles.fresh_products}>
           <div className="container">
@@ -390,58 +394,58 @@ const HomeP = () => {
           <span className={styles.fresh_products_border_line}></span>
         </div>
       </section>
-    {/* SALE PRODUCTS (end) */}
+      {/* SALE PRODUCTS (end) */}
 
-    {/* CATEGORIES (start) */}
+      {/* CATEGORIES (start) */}
       <section id={styles.categories}>
         <div className="container">
           <div className={styles.categories}>
-              <div className={styles.categories__title}>
-                <div></div>
-                <h5>Categories</h5>
-              </div>
-              <div className={styles.categories__subtitle}>
-                Browse By Category
-              </div>
-              <div className="category__items">
-                <Slider {...settings_for_categories}>
-                {categories.map(card => (
-                  <Category {...card}/>
+            <div className={styles.categories__title}>
+              <div></div>
+              <h5>Categories</h5>
+            </div>
+            <div className={styles.categories__subtitle}>
+              Browse By Category
+            </div>
+            <div className="category__items">
+              <Slider {...settings_for_categories}>
+                {categories.map((card) => (
+                  <Category {...card} />
                 ))}
-                </Slider>
-              </div>
+              </Slider>
+            </div>
           </div>
         </div>
       </section>
-    {/* CATEGORIES (end) */}
+      {/* CATEGORIES (end) */}
 
-    {/* BEST SELLING PRODUCTS (start) */}
-    <section id={styles.best_selling}>
-      <div className="container">
-        <div className={styles.best_selling}>
-          <div className={styles.best_selling__title}>
-            <div></div>
-            <h5>This Month</h5>
-          </div>
-          <div className={styles.best_selling__subtitle}>
+      {/* BEST SELLING PRODUCTS (start) */}
+      <section id={styles.best_selling}>
+        <div className="container">
+          <div className={styles.best_selling}>
+            <div className={styles.best_selling__title}>
+              <div></div>
+              <h5>This Month</h5>
+            </div>
+            <div className={styles.best_selling__subtitle}>
               <h1>Best Selling Products</h1>
               <button>View All</button>
-          </div>
-          <div className={styles.best_selling__products}>
-              {bestSellingProducts.map(card => (
-                <Product {...card}/>
+            </div>
+            <div className={styles.best_selling__products}>
+              {bestSellingProducts.map((card) => (
+                <Product {...card} />
               ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    {/* BEST SELLING PRODUCTS (end) */}
+      </section>
+      {/* BEST SELLING PRODUCTS (end) */}
 
-    {/* CATEGORIES AD CARD (start) */}
-    <div className={styles.categories_ad_card}>
-      <div className="container">
-        <div className={styles.categories_ad_card_container}>
-          <div className={styles.categories_ad_card_left}>
+      {/* CATEGORIES AD CARD (start) */}
+      <div className={styles.categories_ad_card}>
+        <div className="container">
+          <div className={styles.categories_ad_card_container}>
+            <div className={styles.categories_ad_card_left}>
               <span>Categories</span>
               <h1>Enhance Your Music Experience</h1>
               <Countdown
@@ -450,68 +454,122 @@ const HomeP = () => {
                 renderer={categoryRenderer}
               />
               <button>Buy Now!</button>
-          </div>
-          <div className={styles.categories_ad_card_right}>
+            </div>
+            <div className={styles.categories_ad_card_right}>
               <img src={MUSICPRODUCT} alt="" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    {/* CATEGORIES AD CARD (end) */}
-    
-    {/* NEW PRODUCTS (start) */}
-    <section id={styles.new_products}>
-      <div className="container">
-        <div className={styles.new_products}>
-          <div className={styles.new_products__title}>
-          <div></div>
-            <h5>Featured</h5>
-          </div>
-          <div className={styles.new_products__subtitle}>
-            New Arrival
-          </div>
-          <div className={styles.new_products_items}>
-          <div className={styles.new_products_items_left}>
-              <img src={NEWPRODUCT1} alt="" />
-              <div className={styles.product_info}>
-                <h4>PlayStation 5</h4>
-                <p>Black and White version of the PS5 coming out on sale.</p>
-                <p>Shop Now</p>
+      {/* CATEGORIES AD CARD (end) */}
+
+      {/* NEW PRODUCTS (start) */}
+      <section id={styles.new_products}>
+        <div className="container">
+          <div className={styles.new_products}>
+            <div className={styles.new_products__title}>
+              <div></div>
+              <h5>Featured</h5>
+            </div>
+            <div className={styles.new_products__subtitle}>New Arrival</div>
+            <div className={styles.new_products_items}>
+              <div className={styles.new_products_items_left}>
+                <img src={NEWPRODUCT1} alt="" />
+                <div className={styles.product_info}>
+                  <h4>PlayStation 5</h4>
+                  <p>Black and White version of the PS5 coming out on sale.</p>
+                  <p>Shop Now</p>
+                </div>
               </div>
-          </div>
-          <div className={styles.new_products_items_right}>
-            <div className={styles.new_products_item_top}>
-              <img src={NEWPRODUCT2} alt="" />
-              <div className={styles.product_info}>
-                <h4>Women’s Collections</h4>
-                <p>Featured woman collections that give you another vibe.</p>
-                <p>Shop Now</p>
+              <div className={styles.new_products_items_right}>
+                <div className={styles.new_products_item_top}>
+                  <img src={NEWPRODUCT2} alt="" />
+                  <div className={styles.product_info}>
+                    <h4>Women’s Collections</h4>
+                    <p>
+                      Featured woman collections that give you another vibe.
+                    </p>
+                    <p>Shop Now</p>
+                  </div>
+                </div>
+                <div className={styles.new_products_item_container}>
+                  <div className={styles.new_products_item_left_bottom}>
+                    <img src={NEWPRODUCT3} alt="" />
+                    <div className={styles.product_info}>
+                      <h4>Speakers</h4>
+                      <p>Amazon wireless speakers</p>
+                      <p>Shop Now</p>
+                    </div>
+                  </div>
+                  <div className={styles.new_products_item_right_bottom}>
+                    <img src={NEWPRODUCT4} alt="" />
+                    <div className={styles.product_info}>
+                      <h4>Perfume</h4>
+                      <p>GUCCI INTENSE OUD EDP</p>
+                      <p>Shop Now</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className={styles.new_products_item_container}>
-              <div className={styles.new_products_item_left_bottom}>
-                <img src={NEWPRODUCT3} alt="" />
-                <div className={styles.product_info}>
-                <h4>Speakers</h4>
-                <p>Amazon wireless speakers</p>
-                <p>Shop Now</p>
-              </div>
-                </div>
-              <div className={styles.new_products_item_right_bottom}>
-                <img src={NEWPRODUCT4} alt="" />
-                <div className={styles.product_info}>
-                <h4>Perfume</h4>
-                <p>GUCCI INTENSE OUD EDP</p>
-                <p>Shop Now</p>
-              </div>
-                </div>
-            </div>
-          </div>
           </div>
         </div>
-      </div>
-    </section>
-    {/* NEW PRODUCTS (end) */}
+      </section>
+      {/* NEW PRODUCTS (end) */}
+
+      {/* COMPANY DETAILS (start) */}
+      <section id={styles.company_details}>
+        <div className="container">
+          <div className={styles.company_details}>
+            <div className={styles.company_details_item}>
+              <div className={styles.company_details_item_logo}>
+              <div class={styles.item}>
+                <img src={ICON1} />
+              </div>
+              <div class={styles.circle}></div>
+              <div class={styles.circle}></div>
+              <div class={styles.circle}></div>
+              <div class={styles.circle}></div>
+              </div>
+              <div className={styles.company_details_item_description}>
+                <h4>FREE AND FAST DELIVERY</h4>
+                <p>Free delivery for all orders over $140</p>
+              </div>
+            </div>
+            <div className={styles.company_details_item}>
+              <div className={styles.company_details_item_logo}>
+              <div class={styles.item}>
+                <img src={ICON2} />
+              </div>
+              <div class={styles.circle}></div>
+              <div class={styles.circle}></div>
+              <div class={styles.circle}></div>
+              <div class={styles.circle}></div>
+              </div>
+              <div className={styles.company_details_item_description}>
+                <h4>24/7 CUSTOMER SERVICE</h4>
+                <p>Friendly 24/7 customer support</p>
+              </div>
+              </div>
+            <div className={styles.company_details_item}>
+            <div className={styles.company_details_item_logo}>
+              <div class={styles.item}>
+                <img src={ICON3} />
+              </div>
+              <div class={styles.circle}></div>
+              <div class={styles.circle}></div>
+              <div class={styles.circle}></div>
+              <div class={styles.circle}></div>
+              </div>
+              <div className={styles.company_details_item_description}>
+                <h4>MONEY BACK GUARANTEE</h4>
+                <p>We reurn money within 30 days</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* COMPANY DETAILS (end) */}
     </>
   );
 };

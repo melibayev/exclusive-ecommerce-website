@@ -617,3 +617,80 @@
 }
 
 // New products (end)
+
+// Company details (start)
+#company_details {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.company_details {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 90px;
+  row-gap: 24px;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  @media (max-width: 578px) {
+    flex-direction: column;
+  }
+  &_item {
+    &_logo {
+      width: 300px;
+      height: 120px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    &_description {
+      text-align: center;
+      h4 {
+        font-size: 20px;
+        font-weight: 600;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.item img {
+  width: 100%;
+}
+
+.circle {
+  border-radius: 50%;
+  background-color: #2f2e30;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  opacity: 0;
+  animation: scaleIn 3s infinite ease-in-out  ;
+  animation-delay: 1s;
+}
+@keyframes scaleIn {
+  from {
+    transform: scale(0.45, 0.45);
+    opacity: 0.2;
+  }
+  to {
+    transform: scale(0.8, 0.8);
+    opacity: 0;
+  }
+}
+
+// Company details (end)
