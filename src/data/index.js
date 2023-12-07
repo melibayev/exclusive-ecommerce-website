@@ -2,7 +2,7 @@ import product1 from '../assets/images/data/pr1.png'
 import product2 from '../assets/images/data/pr2.png'
 import product3 from '../assets/images/data/pr3.png'
 import product4 from '../assets/images/data/pr4.png'
-import product5 from '../assets/images/data/pr5.png'
+// import product5 from '../assets/images/data/pr5.png'
 import product6 from '../assets/images/data/pr6.png'
 import product7 from '../assets/images/data/pr7.png'
 import product8 from '../assets/images/data/pr8.png'
@@ -15,12 +15,6 @@ import product14 from '../assets/images/data/pr14.png'
 import product15 from '../assets/images/data/pr15.png'
 import product16 from '../assets/images/data/pr16.png'
 
-import category1 from '../assets/images/data/cat1.svg'
-import category2 from '../assets/images/data/cat2.svg'
-import category3 from '../assets/images/data/cat3.svg'
-import category4 from '../assets/images/data/cat4.svg'
-import category5 from '../assets/images/data/cat5.svg'
-import category6 from '../assets/images/data/cat6.svg'
 
 import { IoIosPhonePortrait } from "react-icons/io";
 import { RiComputerLine } from "react-icons/ri";

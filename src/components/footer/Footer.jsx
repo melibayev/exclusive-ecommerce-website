@@ -16,7 +16,7 @@ const Footer = () => {
             <li className="footer_links_item"><h1>Exclusive</h1></li>
             <li className="footer_links_item"><p>Subscribe</p></li>
             <li className="footer_links_item">
-              <input type="text" placeholder='Enter your email'/>
+              <input type="email" placeholder='Enter your email'/>
               <LuSendHorizonal />
             </li>
           </ul>

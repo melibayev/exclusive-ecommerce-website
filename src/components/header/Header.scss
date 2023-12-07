@@ -92,6 +92,23 @@ nav {
                 font-size: 22px;
             }
         }
+        .wishlist, .cart {
+            position: relative;
+            &_number {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 18px;
+                height: 18px;
+                font-size: 12px;
+                top: -8px;
+                right: -10px;
+                border-radius: 50%;
+                color: #FAFAFA;
+                background-color: #DB4444;
+            }
+        }
         .hamburger {
             display: none;
             color: #000;

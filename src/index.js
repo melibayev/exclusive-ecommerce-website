@@ -5,11 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { WishlistProvider } from './components/contexts/wishlist-context';
+import { CartProvider } from './components/contexts/cartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <CartProvider>
+    <WishlistProvider>
+      <App />
+    </WishlistProvider>
+    </CartProvider>
   </React.StrictMode>
 );
 

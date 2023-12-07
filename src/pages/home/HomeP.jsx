@@ -386,7 +386,7 @@ const HomeP = () => {
           <div className={styles.products}>
             <Slider {...settings}>
               {saleProducts.map((card) => (
-                <Product {...card} />
+                <Product {...card} key={card.id} />
               ))}
             </Slider>
             <button>View All Products</button>
@@ -410,7 +410,7 @@ const HomeP = () => {
             <div className="category__items">
               <Slider {...settings_for_categories}>
                 {categories.map((card) => (
-                  <Category {...card} />
+                  <Category {...card} key={card.id} />
                 ))}
               </Slider>
             </div>
@@ -433,7 +433,7 @@ const HomeP = () => {
             </div>
             <div className={styles.best_selling__products}>
               {bestSellingProducts.map((card) => (
-                <Product {...card} />
+                <Product {...card} key={card.id} />
               ))}
             </div>
           </div>
@@ -523,13 +523,13 @@ const HomeP = () => {
           <div className={styles.company_details}>
             <div className={styles.company_details_item}>
               <div className={styles.company_details_item_logo}>
-              <div class={styles.item}>
-                <img src={ICON1} />
+              <div className={styles.item}>
+                <img src={ICON1} alt=''/>
               </div>
-              <div class={styles.circle}></div>
-              <div class={styles.circle}></div>
-              <div class={styles.circle}></div>
-              <div class={styles.circle}></div>
+              <div className={styles.circle}></div>
+              <div className={styles.circle}></div>
+              <div className={styles.circle}></div>
+              <div className={styles.circle}></div>
               </div>
               <div className={styles.company_details_item_description}>
                 <h4>FREE AND FAST DELIVERY</h4>
@@ -538,13 +538,13 @@ const HomeP = () => {
             </div>
             <div className={styles.company_details_item}>
               <div className={styles.company_details_item_logo}>
-              <div class={styles.item}>
-                <img src={ICON2} />
+              <div className={styles.item}>
+                <img src={ICON2} alt='' />
               </div>
-              <div class={styles.circle}></div>
-              <div class={styles.circle}></div>
-              <div class={styles.circle}></div>
-              <div class={styles.circle}></div>
+              <div className={styles.circle}></div>
+              <div className={styles.circle}></div>
+              <div className={styles.circle}></div>
+              <div className={styles.circle}></div>
               </div>
               <div className={styles.company_details_item_description}>
                 <h4>24/7 CUSTOMER SERVICE</h4>
@@ -553,13 +553,13 @@ const HomeP = () => {
               </div>
             <div className={styles.company_details_item}>
             <div className={styles.company_details_item_logo}>
-              <div class={styles.item}>
-                <img src={ICON3} />
+              <div className={styles.item}>
+                <img src={ICON3} alt='' />
               </div>
-              <div class={styles.circle}></div>
-              <div class={styles.circle}></div>
-              <div class={styles.circle}></div>
-              <div class={styles.circle}></div>
+              <div className={styles.circle}></div>
+              <div className={styles.circle}></div>
+              <div className={styles.circle}></div>
+              <div className={styles.circle}></div>
               </div>
               <div className={styles.company_details_item_description}>
                 <h4>MONEY BACK GUARANTEE</h4>
