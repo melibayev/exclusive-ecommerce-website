@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
@@ -35,14 +34,14 @@ const Header = () => {
                 <h1>Exclusive</h1>
             </div>
             <ul className="navbar-middle">
-                <NavLink><li>Home</li></NavLink>
+                <NavLink to={'/'}><li>Home</li></NavLink>
                 <NavLink><li>Contact</li></NavLink>
                 <NavLink><li>About</li></NavLink>
                 <NavLink><li>Sign Up</li></NavLink>
             </ul>
             <ul className="navbar-right">
                 <li className="navbar-right-input"><input type="text" placeholder="What are you looking for?" /><CiSearch /></li>
-                <NavLink>
+                <NavLink to={'/wishlist'}>
                   <li className="wishlist">
                     <FaRegHeart />
                     {wishlistTotal > 0 && <div className="wishlist_number">{wishlistTotal}</div>}

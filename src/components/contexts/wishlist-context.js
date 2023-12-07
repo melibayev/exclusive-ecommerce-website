@@ -32,9 +32,16 @@ export const WishlistProvider = ({ children }) => {
     localStorage.setItem("wishlist", JSON.stringify(wishlistProducts));
   };
 
+  const removeFromwishlist = (id) => {
+    const updatedwishlist = wishlist.filter((product) => product.id !== id);
+    setWishlist(updatedwishlist);
+    localStorage.setItem("wishlist", JSON.stringify(updatedwishlist));
+  };
+
   const contextValue = {
     wishlist,
     addToWishlist,
+    removeFromwishlist,
   };
 
   return (

@@ -1,7 +1,6 @@
 import styles from "./product.module.scss";
 import { FaStar } from "react-icons/fa6";
 import { FaRegHeart, FaEye } from "react-icons/fa";
-// import { NavLink } from "react-router-dom";
 import { useWishlist } from '../contexts/wishlist-context'
 import { useCart } from "../contexts/cartContext";
 

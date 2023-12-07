@@ -24,7 +24,7 @@
         .addToCart {
             bottom: 0;
         }
-        .like, .view {
+        .like, .view, .delete {
             right: 12px;
         }
     }
@@ -64,7 +64,7 @@
     cursor: pointer;
 }
 
-.like, .view {
+.like, .view, .delete {
     position: absolute;
     display: flex;
     align-items: center;
@@ -82,6 +82,10 @@
 }
 
 .like {
+    top: 12px;
+}
+
+.delete {
     top: 12px;
 }
 
