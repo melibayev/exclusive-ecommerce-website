@@ -350,7 +350,7 @@ const HomeP = () => {
       <section id={styles.home_banner}>
         <div className="container">
           <div className={styles.home_banner}>
-              <Slide direction="left">
+              <Slide direction="left" triggerOnce>
             <div className={styles.home_banner_info}>
               <div className={styles.home_banner_info_logo}>
                 <img src={APPLE} alt="" />
@@ -363,7 +363,7 @@ const HomeP = () => {
               <p>Shop Now</p>
             </div>
               </Slide>
-              <Slide direction="right">
+              <Slide direction="right" triggerOnce>
             <div className={styles.home_banner_img}>
               <img src={IPHONE} alt="" />
             </div>
@@ -377,7 +377,7 @@ const HomeP = () => {
       <section id={styles.fresh_products}>
         <div className={styles.fresh_products}>
           <div className="container">
-            <Slide >
+            <Slide direction="up" triggerOnce>
               <div className={styles.fresh_products__title}>
                 <div></div>
                 <h5>Today's</h5>
@@ -391,14 +391,16 @@ const HomeP = () => {
               </div>
             </Slide>
           </div>
-          <div className={styles.products}>
-            <Slider {...settings}>
-              {saleProducts.map((card) => (
-                <Product {...card} key={card.id} />
-              ))}
-            </Slider>
-            <button>View All Products</button>
-          </div>
+          <Slide direction="up" triggerOnce>
+            <div className={styles.products}>
+                <Slider {...settings}>
+                  {saleProducts.map((card) => (
+                    <Product {...card} key={card.id} />
+                  ))}
+                </Slider>
+                <button>View All Products</button>
+            </div>
+          </Slide>
           <span className={styles.fresh_products_border_line}></span>
         </div>
       </section>
@@ -408,7 +410,7 @@ const HomeP = () => {
       <section id={styles.categories}>
         <div className="container">
           <div className={styles.categories}>
-            <Slide >
+            <Slide direction="up" triggerOnce>
               <div className={styles.categories__title}>
                 <div></div>
                 <h5>Categories</h5>
@@ -417,13 +419,15 @@ const HomeP = () => {
               Browse By Category
             </div>
             </Slide>
-            <div className="category__items">
-              <Slider {...settings_for_categories}>
-                {categories.map((card) => (
-                  <Category {...card} key={card.id} />
-                ))}
-              </Slider>
-            </div>
+            <Slide direction="up" triggerOnce>
+              <div className="category__items">
+                <Slider {...settings_for_categories}>
+                  {categories.map((card) => (
+                    <Category {...card} key={card.id} />
+                  ))}
+                </Slider>
+              </div>
+            </Slide>
           </div>
         </div>
       </section>
@@ -433,19 +437,23 @@ const HomeP = () => {
       <section id={styles.best_selling}>
         <div className="container">
           <div className={styles.best_selling}>
-            <div className={styles.best_selling__title}>
-              <div></div>
-              <h5>This Month</h5>
-            </div>
-            <div className={styles.best_selling__subtitle}>
-              <h1>Best Selling Products</h1>
-              <button>View All</button>
-            </div>
-            <div className={styles.best_selling__products}>
-              {bestSellingProducts.map((card) => (
-                <Product {...card} key={card.id} />
-              ))}
-            </div>
+            <Slide direction="up" triggerOnce>
+              <div className={styles.best_selling__title}>
+                <div></div>
+                <h5>This Month</h5>
+              </div>
+              <div className={styles.best_selling__subtitle}>
+                <h1>Best Selling Products</h1>
+                <button>View All</button>
+              </div>
+            </Slide>
+            <Slide direction="up" triggerOnce>
+              <div className={styles.best_selling__products}>
+                {bestSellingProducts.map((card) => (
+                  <Product {...card} key={card.id} />
+                ))}
+              </div>
+            </Slide>
           </div>
         </div>
       </section>
@@ -456,17 +464,17 @@ const HomeP = () => {
         <div className="container">
           <div className={styles.categories_ad_card_container}>
             <div className={styles.categories_ad_card_left}>
-              <span>Categories</span>
-              <h1>Enhance Your Music Experience</h1>
-              <Countdown
+              <Slide direction="up" triggerOnce><span>Categories</span></Slide>
+              <Slide direction="up" triggerOnce><h1>Enhance Your Music Experience</h1></Slide>
+              <Slide direction="up" triggerOnce><Countdown
                 date={Date.now() + 200_000_000}
                 zeroPadTime={2}
                 renderer={categoryRenderer}
-              />
-              <button>Buy Now!</button>
+              /></Slide>
+              <Slide direction="up" triggerOnce><button>Buy Now!</button></Slide>
             </div>
             <div className={styles.categories_ad_card_right}>
-              <img src={MUSICPRODUCT} alt="" />
+              <Slide direction="up" triggerOnce><img src={MUSICPRODUCT} alt="" /></Slide>
             </div>
           </div>
         </div>
@@ -477,48 +485,58 @@ const HomeP = () => {
       <section id={styles.new_products}>
         <div className="container">
           <div className={styles.new_products}>
-            <div className={styles.new_products__title}>
-              <div></div>
-              <h5>Featured</h5>
-            </div>
+            <Slide direction="up" triggerOnce>
+              <div className={styles.new_products__title}>
+                <div></div>
+                <h5>Featured</h5>
+              </div>
+            </Slide>
             <div className={styles.new_products__subtitle}>New Arrival</div>
             <div className={styles.new_products_items}>
-              <div className={styles.new_products_items_left}>
-                <img src={NEWPRODUCT1} alt="" />
-                <div className={styles.product_info}>
-                  <h4>PlayStation 5</h4>
-                  <p>Black and White version of the PS5 coming out on sale.</p>
-                  <p>Shop Now</p>
-                </div>
-              </div>
-              <div className={styles.new_products_items_right}>
-                <div className={styles.new_products_item_top}>
-                  <img src={NEWPRODUCT2} alt="" />
+              <Slide direction="left" triggerOnce>
+                <div className={styles.new_products_items_left}>
+                  <img src={NEWPRODUCT1} alt="" />
                   <div className={styles.product_info}>
-                    <h4>Women’s Collections</h4>
-                    <p>
-                      Featured woman collections that give you another vibe.
-                    </p>
+                    <h4>PlayStation 5</h4>
+                    <p>Black and White version of the PS5 coming out on sale.</p>
                     <p>Shop Now</p>
                   </div>
                 </div>
+              </Slide>
+              <div className={styles.new_products_items_right}>
+                <Slide direction="right" triggerOnce>
+                  <div className={styles.new_products_item_top}>
+                    <img src={NEWPRODUCT2} alt="" />
+                    <div className={styles.product_info}>
+                      <h4>Women’s Collections</h4>
+                      <p>
+                        Featured woman collections that give you another vibe.
+                      </p>
+                      <p>Shop Now</p>
+                    </div>
+                  </div>
+                </Slide>
                 <div className={styles.new_products_item_container}>
-                  <div className={styles.new_products_item_left_bottom}>
-                    <img src={NEWPRODUCT3} alt="" />
-                    <div className={styles.product_info}>
-                      <h4>Speakers</h4>
-                      <p>Amazon wireless speakers</p>
-                      <p>Shop Now</p>
+                  <Slide direction="up" triggerOnce>
+                    <div className={styles.new_products_item_left_bottom}>
+                      <img src={NEWPRODUCT3} alt="" />
+                      <div className={styles.product_info}>
+                        <h4>Speakers</h4>
+                        <p>Amazon wireless speakers</p>
+                        <p>Shop Now</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className={styles.new_products_item_right_bottom}>
-                    <img src={NEWPRODUCT4} alt="" />
-                    <div className={styles.product_info}>
-                      <h4>Perfume</h4>
-                      <p>GUCCI INTENSE OUD EDP</p>
-                      <p>Shop Now</p>
+                  </Slide>
+                  <Slide direction="up" triggerOnce>
+                    <div className={styles.new_products_item_right_bottom}>
+                        <img src={NEWPRODUCT3} alt="" />
+                        <div className={styles.product_info}>
+                          <h4>Perfume</h4>
+                          <p>GUCCI INTENSE OUD EDP</p>
+                          <p>Shop Now</p>
+                        </div>
                     </div>
-                  </div>
+                  </Slide>
                 </div>
               </div>
             </div>
@@ -531,51 +549,57 @@ const HomeP = () => {
       <section id={styles.company_details}>
         <div className="container">
           <div className={styles.company_details}>
-            <div className={styles.company_details_item}>
+            <Slide direction="up" triggerOnce>
+              <div className={styles.company_details_item}>
+                <div className={styles.company_details_item_logo}>
+                <div className={styles.item}>
+                  <img src={ICON1} alt=''/>
+                </div>
+                <div className={styles.circle}></div>
+                <div className={styles.circle}></div>
+                <div className={styles.circle}></div>
+                <div className={styles.circle}></div>
+                </div>
+                <div className={styles.company_details_item_description}>
+                  <h4>FREE AND FAST DELIVERY</h4>
+                  <p>Free delivery for all orders over $140</p>
+                </div>
+              </div>
+            </Slide>
+            <Slide direction="up" triggerOnce>
+              <div className={styles.company_details_item}>
+                <div className={styles.company_details_item_logo}>
+                <div className={styles.item}>
+                  <img src={ICON2} alt='' />
+                </div>
+                <div className={styles.circle}></div>
+                <div className={styles.circle}></div>
+                <div className={styles.circle}></div>
+                <div className={styles.circle}></div>
+                </div>
+                <div className={styles.company_details_item_description}>
+                  <h4>24/7 CUSTOMER SERVICE</h4>
+                  <p>Friendly 24/7 customer support</p>
+                </div>
+              </div>
+            </Slide>
+            <Slide direction="up" triggerOnce>
+              <div className={styles.company_details_item}>
               <div className={styles.company_details_item_logo}>
-              <div className={styles.item}>
-                <img src={ICON1} alt=''/>
+                <div className={styles.item}>
+                  <img src={ICON3} alt='' />
+                </div>
+                <div className={styles.circle}></div>
+                <div className={styles.circle}></div>
+                <div className={styles.circle}></div>
+                <div className={styles.circle}></div>
+                </div>
+                <div className={styles.company_details_item_description}>
+                  <h4>MONEY BACK GUARANTEE</h4>
+                  <p>We reurn money within 30 days</p>
+                </div>
               </div>
-              <div className={styles.circle}></div>
-              <div className={styles.circle}></div>
-              <div className={styles.circle}></div>
-              <div className={styles.circle}></div>
-              </div>
-              <div className={styles.company_details_item_description}>
-                <h4>FREE AND FAST DELIVERY</h4>
-                <p>Free delivery for all orders over $140</p>
-              </div>
-            </div>
-            <div className={styles.company_details_item}>
-              <div className={styles.company_details_item_logo}>
-              <div className={styles.item}>
-                <img src={ICON2} alt='' />
-              </div>
-              <div className={styles.circle}></div>
-              <div className={styles.circle}></div>
-              <div className={styles.circle}></div>
-              <div className={styles.circle}></div>
-              </div>
-              <div className={styles.company_details_item_description}>
-                <h4>24/7 CUSTOMER SERVICE</h4>
-                <p>Friendly 24/7 customer support</p>
-              </div>
-              </div>
-            <div className={styles.company_details_item}>
-            <div className={styles.company_details_item_logo}>
-              <div className={styles.item}>
-                <img src={ICON3} alt='' />
-              </div>
-              <div className={styles.circle}></div>
-              <div className={styles.circle}></div>
-              <div className={styles.circle}></div>
-              <div className={styles.circle}></div>
-              </div>
-              <div className={styles.company_details_item_description}>
-                <h4>MONEY BACK GUARANTEE</h4>
-                <p>We reurn money within 30 days</p>
-              </div>
-            </div>
+            </Slide>
           </div>
         </div>
       </section>
