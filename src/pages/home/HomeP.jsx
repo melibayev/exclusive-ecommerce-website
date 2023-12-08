@@ -1,5 +1,7 @@
 import Countdown from "react-countdown";
 import Slider from "react-slick";
+import Slide from 'react-reveal/Slide';
+
 import styles from "./HomeP.module.scss";
 import { categories, products } from "../../data";
 
@@ -340,6 +342,8 @@ var settings_for_categories = {
   ],
 };
 
+window.scrollTo({top: 0})
+
 const HomeP = () => {
   return (
     <>
@@ -347,6 +351,7 @@ const HomeP = () => {
       <section id={styles.home_banner}>
         <div className="container">
           <div className={styles.home_banner}>
+              <Slide left>
             <div className={styles.home_banner_info}>
               <div className={styles.home_banner_info_logo}>
                 <img src={APPLE} alt="" />
@@ -358,9 +363,12 @@ const HomeP = () => {
               </h1>
               <p>Shop Now</p>
             </div>
+              </Slide>
+              <Slide right>
             <div className={styles.home_banner_img}>
               <img src={IPHONE} alt="" />
             </div>
+            </Slide>
           </div>
         </div>
       </section>
@@ -370,18 +378,19 @@ const HomeP = () => {
       <section id={styles.fresh_products}>
         <div className={styles.fresh_products}>
           <div className="container">
-            <div className={styles.fresh_products__title}>
-              <div></div>
-              <h5>Today's</h5>
-            </div>
-            <div className={styles.fresh_products__subtitle}>
-              <h2>Flash Sales</h2>
-              <Countdown
-                date={Date.now() + 700_000_000}
-                zeroPadTime={2}
-                renderer={renderer}
-              />
-            </div>
+            <Slide left>
+              <div className={styles.fresh_products__title}>
+                <div></div>
+                <h5>Today's</h5>
+              </div>
+              <div className={styles.fresh_products__subtitle}>
+                <h2>Flash Sales</h2>
+                <Countdown
+                  date={Date.now() + 700_000_000}
+                  zeroPadTime={2}
+                  renderer={renderer}/>
+              </div>
+            </Slide>
           </div>
           <div className={styles.products}>
             <Slider {...settings}>
@@ -400,13 +409,15 @@ const HomeP = () => {
       <section id={styles.categories}>
         <div className="container">
           <div className={styles.categories}>
-            <div className={styles.categories__title}>
-              <div></div>
-              <h5>Categories</h5>
-            </div>
+            <Slide left>
+              <div className={styles.categories__title}>
+                <div></div>
+                <h5>Categories</h5>
+              </div>
             <div className={styles.categories__subtitle}>
               Browse By Category
             </div>
+            </Slide>
             <div className="category__items">
               <Slider {...settings_for_categories}>
                 {categories.map((card) => (

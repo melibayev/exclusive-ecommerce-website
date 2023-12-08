@@ -38,10 +38,15 @@ export const WishlistProvider = ({ children }) => {
     localStorage.setItem("wishlist", JSON.stringify(updatedwishlist));
   };
 
+  const isProductExist = (id) => {
+    return wishlist.some((product) => product.id === id);
+  };
+
   const contextValue = {
     wishlist,
     addToWishlist,
     removeFromwishlist,
+    isProductExist
   };
 
   return (

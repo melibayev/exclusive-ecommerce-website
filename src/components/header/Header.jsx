@@ -31,7 +31,7 @@ const Header = () => {
         <div className="navbar">
           <div className="container">
             <div className="navbar-left">
-                <h1>Exclusive</h1>
+                <NavLink to={'/'}><h1>Exclusive</h1></NavLink>
             </div>
             <ul className="navbar-middle">
                 <NavLink to={'/'}><li>Home</li></NavLink>
@@ -47,7 +47,7 @@ const Header = () => {
                     {wishlistTotal > 0 && <div className="wishlist_number">{wishlistTotal}</div>}
                   </li>
                   </NavLink>
-                <NavLink>
+                <NavLink to={'/cart'}>
                   <li className="cart">
                     <FiShoppingCart />
                     {cartTotal > 0 && <div className="cart_number">{cartTotal}</div>}

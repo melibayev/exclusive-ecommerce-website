@@ -46,6 +46,7 @@ footer {
             top: 12px;
             right: 12px;
             font-size: 20px;
+            opacity: .5;
             cursor: pointer;
         }
     }
@@ -67,11 +68,12 @@ footer {
         }
         input {
             font-size: 16px;
+            width: 80%;
         }
         svg {
             left: inherit;
             top: 14px;
-            right: calc(50% - 100px);
+            right: calc(50% - 110px);
         }
       }
     }

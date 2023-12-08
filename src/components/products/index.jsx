@@ -1,11 +1,12 @@
 import styles from "./product.module.scss";
 import { FaStar } from "react-icons/fa6";
+import { FaHeart } from "react-icons/fa6";
 import { FaRegHeart, FaEye } from "react-icons/fa";
 import { useWishlist } from '../contexts/wishlist-context'
 import { useCart } from "../contexts/cartContext";
 
 const Product = ({ name, img, price, rating, id }) => {
-  const { addToWishlist } = useWishlist();
+  const { isProductExist, addToWishlist, removeFromwishlist } = useWishlist();
   const { addToCart } = useCart()
   return (
     <div className={styles.card}>
@@ -14,9 +15,14 @@ const Product = ({ name, img, price, rating, id }) => {
         <div className={styles.addToCart} onClick={() => addToCart(id)}>
           Add To Cart
         </div>
-        <div className={styles.like} onClick={() => addToWishlist(id)}>
-          <FaRegHeart />
-        </div>
+        { isProductExist(id) ?
+          <div className={styles.liked} onClick={() => removeFromwishlist(id)}>
+            <FaHeart />
+          </div> :
+          <div className={styles.like} onClick={() => addToWishlist(id)}>
+            <FaRegHeart />
+          </div>
+        }
         <div className={styles.view}>
           <FaEye />
         </div>
