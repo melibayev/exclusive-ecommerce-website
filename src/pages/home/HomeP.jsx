@@ -14,7 +14,7 @@ import MUSICPRODUCT from "../../assets/images/data/pr5.png";
 import NEWPRODUCT1 from "../../assets/images/news1.png";
 import NEWPRODUCT2 from "../../assets/images/news2.png";
 import NEWPRODUCT3 from "../../assets/images/news3.png";
-import NEWPRODUCT4 from "../../assets/images/news4.png";
+// import NEWPRODUCT4 from "../../assets/images/news4.png";
 
 import ICON1 from "../../assets/images/icon1.svg";
 import ICON2 from "../../assets/images/icon2.svg";

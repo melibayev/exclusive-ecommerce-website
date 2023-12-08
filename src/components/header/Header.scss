@@ -9,6 +9,7 @@ nav {
 
 .nav-top {
     padding: 12px 0;
+    transition: .5s;
     .container {
         display: flex;
         justify-content: center;
@@ -37,6 +38,13 @@ nav {
         padding: 8px 0;
     }
     background-color: #000;
+}
+
+.scrolled {
+    margin-top: -60px;
+    @media (max-width: 576px) {
+        margin-top: -45px;
+    }
 }
 
 .navbar {

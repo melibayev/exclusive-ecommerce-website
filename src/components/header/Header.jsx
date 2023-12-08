@@ -10,16 +10,39 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import "./Header.scss";
 import { useWishlist } from "../contexts/wishlist-context";
 import { useCart } from "../contexts/cartContext";
+import { useState } from "react";
+import { useEffect } from "react";
 const Header = () => {
   const { wishlist } = useWishlist()
   const { cart } = useCart()
   const wishlistTotal = wishlist.length
   const cartTotal = cart.length
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    let prevScrollY = 0;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      const scrolledDown = currentScrollY > 50 && currentScrollY > prevScrollY;
+      setIsScrolled(scrolledDown);
+
+      prevScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header>
       <nav>
-        <div className="nav-top">
+        <div className={`nav-top ${isScrolled ? "scrolled" : ""}`}>
           <div className="container">
             <p>
               Summer Sale For All Swim Suits And Free Express Delivery - OFF
