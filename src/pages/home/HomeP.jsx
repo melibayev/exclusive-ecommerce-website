@@ -1,7 +1,6 @@
 import Countdown from "react-countdown";
 import Slider from "react-slick";
-import Slide from 'react-reveal/Slide';
-
+import { Slide } from "react-awesome-reveal";
 import styles from "./HomeP.module.scss";
 import { categories, products } from "../../data";
 
@@ -351,7 +350,7 @@ const HomeP = () => {
       <section id={styles.home_banner}>
         <div className="container">
           <div className={styles.home_banner}>
-              <Slide left>
+              <Slide direction="left">
             <div className={styles.home_banner_info}>
               <div className={styles.home_banner_info_logo}>
                 <img src={APPLE} alt="" />
@@ -364,7 +363,7 @@ const HomeP = () => {
               <p>Shop Now</p>
             </div>
               </Slide>
-              <Slide right>
+              <Slide direction="right">
             <div className={styles.home_banner_img}>
               <img src={IPHONE} alt="" />
             </div>
@@ -378,7 +377,7 @@ const HomeP = () => {
       <section id={styles.fresh_products}>
         <div className={styles.fresh_products}>
           <div className="container">
-            <Slide left>
+            <Slide >
               <div className={styles.fresh_products__title}>
                 <div></div>
                 <h5>Today's</h5>
@@ -409,7 +408,7 @@ const HomeP = () => {
       <section id={styles.categories}>
         <div className="container">
           <div className={styles.categories}>
-            <Slide left>
+            <Slide >
               <div className={styles.categories__title}>
                 <div></div>
                 <h5>Categories</h5>
