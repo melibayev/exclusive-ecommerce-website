@@ -1,20 +1,18 @@
 import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
 
 import { CiSearch } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-import LOGO from '../../assets/images/navbar_logo.svg'
-import LOGO2 from '../../assets/images/navbar_logo2.png'
-import LOGO3 from '../../assets/images/navbar_logo3.svg'
+
 import LOGO4 from '../../assets/images/navbar_logo4.svg'
 
 
 import "./Header.scss";
 import { useWishlist } from "../contexts/wishlist-context";
 import { useCart } from "../contexts/cartContext";
+import { useScrolled } from "../contexts/scrollContext";
 
 
 const Header = () => {
@@ -23,26 +21,7 @@ const Header = () => {
   const wishlistTotal = wishlist.length
   const cartTotal = cart.length
 
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    let prevScrollY = 0;
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      const scrolledDown = currentScrollY > 50 && currentScrollY > prevScrollY;
-      setIsScrolled(scrolledDown);
-
-      prevScrollY = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const isScrolled = useScrolled()
 
   return (
     <header>

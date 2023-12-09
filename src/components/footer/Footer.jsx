@@ -2,6 +2,8 @@ import { LuSendHorizonal } from "react-icons/lu";
 import { FaRegHeart, FaRegUser } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { FaXmark } from "react-icons/fa6";
+
 
 // images
 import qrcode from '../../assets/images/footer1.png'
@@ -12,19 +14,28 @@ import './Footer.scss'
 import { useWishlist } from "../contexts/wishlist-context";
 import { useCart } from "../contexts/cartContext";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { useScrolled } from "../contexts/scrollContext";
 
 const Footer = () => {
   const { wishlist } = useWishlist()
   const { cart } = useCart()
   const wishlistTotal = wishlist.length
   const cartTotal = cart.length
+
+  const isScrolled = useScrolled()
+  const [navbar, setNavbar] = useState(false)
+
+  const navbarHandle = () => {
+    setNavbar(!navbar)
+  }
   return (
     <footer>
       <div className="container">
         <ul className="footer_mobile">
-          <li className='footer_mobile_items'>
-              <RxHamburgerMenu />
-              <p>Catalog</p>
+          <li className='footer_mobile_items' onClick={navbarHandle}>
+            {navbar ? <FaXmark /> : <RxHamburgerMenu />}
+            <p>Catalog</p>
           </li>
           <NavLink to={'/cart'}>
           <li className='footer_mobile_items'>
@@ -89,6 +100,15 @@ const Footer = () => {
                   <img src={appstoreIcon} alt="" />
                 </div>
             </div>
+        </div>
+      </div>
+      <div className="container">
+        <div className={`footer_menu ${navbar ? 'opened' : ''} ${isScrolled ? 'scrolled' : ''}`}>
+          <ul className="footer_menu_items">
+              <li className="footer_menu_link">Home</li>
+              <li className="footer_menu_link">About</li>
+              <li className="footer_menu_link">Contact</li>
+          </ul>
         </div>
       </div>
     </footer>

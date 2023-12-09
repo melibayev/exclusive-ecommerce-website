@@ -20,7 +20,7 @@ import NEWPRODUCT3 from "../../assets/images/news3.png";
 import ICON1 from "../../assets/images/icon1.svg";
 import ICON2 from "../../assets/images/icon2.svg";
 import ICON3 from "../../assets/images/icon3.svg";
-import { useEffect, useState } from "react";
+import { useScrolled } from "../../components/contexts/scrollContext";
 
 // countdown settings
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -351,26 +351,7 @@ window.scrollTo({top: 0})
 
 
 const HomeP = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  
-  useEffect(() => {
-    let prevScrollY = 0;
-  
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-  
-      const scrolledDown = currentScrollY > 50 && currentScrollY > prevScrollY;
-      setIsScrolled(scrolledDown);
-  
-      prevScrollY = currentScrollY;
-    };
-  
-    window.addEventListener("scroll", handleScroll);
-  
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const isScrolled = useScrolled()
 
   return (
     <>
