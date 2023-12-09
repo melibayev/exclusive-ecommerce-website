@@ -15,6 +15,11 @@
       height: 120px;
       object-fit: contain;
     }
+    @media (max-width: 578px) {
+      img {
+        height: 100px;
+      }
+    }
   }
   &_title {
     font-size: 18px;

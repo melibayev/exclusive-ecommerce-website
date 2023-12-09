@@ -72,6 +72,14 @@ nav {
             display: none;
         }
     }
+    &_logo {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        img {
+            width: 50px;
+        }
+    }
     &-right {
         display: flex;
         align-items: center;
@@ -94,6 +102,9 @@ nav {
             @media (max-width: 576px) {
                 display: none;
             }
+        }
+        @media (max-width: 576px) {
+            display: none;
         }
         .wishlist, .cart {
             svg {

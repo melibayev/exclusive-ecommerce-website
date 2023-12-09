@@ -1,17 +1,22 @@
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+
 import { CiSearch } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-
+import LOGO from '../../assets/images/navbar_logo.svg'
+import LOGO2 from '../../assets/images/navbar_logo2.png'
+import LOGO3 from '../../assets/images/navbar_logo3.svg'
+import LOGO4 from '../../assets/images/navbar_logo4.svg'
 
 
 import "./Header.scss";
 import { useWishlist } from "../contexts/wishlist-context";
 import { useCart } from "../contexts/cartContext";
-import { useState } from "react";
-import { useEffect } from "react";
+
+
 const Header = () => {
   const { wishlist } = useWishlist()
   const { cart } = useCart()
@@ -54,7 +59,10 @@ const Header = () => {
         <div className="navbar">
           <div className="container">
             <div className="navbar-left">
-                <NavLink to={'/'}><h1>Exclusive</h1></NavLink>
+                <NavLink to={'/'} className={'navbar_logo'}>
+                  <img src={LOGO4} alt="" />
+                  <h1>Shopify</h1>
+                </NavLink>
             </div>
             <ul className="navbar-middle">
                 <NavLink to={'/'}><li>Home</li></NavLink>

@@ -41,3 +41,28 @@ button {
   cursor: pointer;
   background-color: transparent;
 }
+
+.back_to_top {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  right: 40px;
+  bottom: -100px;
+  padding: 14px;
+  border-radius: 50%;
+  z-index: 10;
+  background-color: #F5F5F5;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.isScrolled {
+  bottom: 30px;
+}
+
+/* @media (min-width: 1500px) {
+  .container {
+    max-width: 1500px;
+  }
+} */

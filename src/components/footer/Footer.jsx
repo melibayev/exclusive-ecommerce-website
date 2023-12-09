@@ -1,19 +1,55 @@
-import './Footer.scss'
 import { LuSendHorizonal } from "react-icons/lu";
+import { FaRegHeart, FaRegUser } from "react-icons/fa";
+import { FiShoppingCart } from "react-icons/fi";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 // images
 import qrcode from '../../assets/images/footer1.png'
 import googleIcon from '../../assets/images/footer2.png'
 import appstoreIcon from '../../assets/images/footer3.png'
 
+import './Footer.scss'
+import { useWishlist } from "../contexts/wishlist-context";
+import { useCart } from "../contexts/cartContext";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
+  const { wishlist } = useWishlist()
+  const { cart } = useCart()
+  const wishlistTotal = wishlist.length
+  const cartTotal = cart.length
   return (
     <footer>
       <div className="container">
+        <ul className="footer_mobile">
+          <li className='footer_mobile_items'>
+              <RxHamburgerMenu />
+              <p>Catalog</p>
+          </li>
+          <NavLink to={'/cart'}>
+          <li className='footer_mobile_items'>
+            <FiShoppingCart />
+            <p>Cart</p>
+            {cartTotal > 0 && <div className="cart_number">{cartTotal}</div>}
+          </li>
+          </NavLink>
+          <NavLink to={'/wishlist'}>
+          <li className='footer_mobile_items'>
+            <FaRegHeart />
+            <p>Wishlist</p>
+            {wishlistTotal > 0 && <div className="wishlist_number">{wishlistTotal}</div>}
+          </li>
+          </NavLink>
+          <li className='footer_mobile_items'>
+            <FaRegUser />
+            <p>Account</p>
+          </li>
+        </ul>
+      </div>
+      <div className="container">
         <div className="footer_links">
           <ul className="footer_links_items">
-            <li className="footer_links_item"><h1>Exclusive</h1></li>
+            <li className="footer_links_item"><h1>Shopify</h1></li>
             <li className="footer_links_item"><p>Subscribe</p></li>
             <li className="footer_links_item">
               <input type="email" placeholder='Enter your email'/>

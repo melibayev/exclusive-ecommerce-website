@@ -6,6 +6,7 @@ import { categories, products } from "../../data";
 
 // IMAGES AND ICONS
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowUp } from "react-icons/fa";
 import IPHONE from "../../assets/images/iphone.png";
 import APPLE from "../../assets/images/logo.png";
 import Product from "../../components/products";
@@ -19,6 +20,7 @@ import NEWPRODUCT3 from "../../assets/images/news3.png";
 import ICON1 from "../../assets/images/icon1.svg";
 import ICON2 from "../../assets/images/icon2.svg";
 import ICON3 from "../../assets/images/icon3.svg";
+import { useEffect, useState } from "react";
 
 // countdown settings
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -341,11 +343,42 @@ var settings_for_categories = {
   ],
 };
 
+const backToTop = () => {
+  window.scrollTo({top: 0})
+} 
+
 window.scrollTo({top: 0})
 
+
 const HomeP = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  
+  useEffect(() => {
+    let prevScrollY = 0;
+  
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+  
+      const scrolledDown = currentScrollY > 50 && currentScrollY > prevScrollY;
+      setIsScrolled(scrolledDown);
+  
+      prevScrollY = currentScrollY;
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+  
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
+    {/* Back To Top (start) */}
+    <div className={`back_to_top ${isScrolled ? "isScrolled" : ""}`} onClick={backToTop}>
+      <FaArrowUp />
+    </div>
+    {/* Back To Top (end) */}
       {/* HOME BANNER (start) */}
       <section id={styles.home_banner}>
         <div className="container">

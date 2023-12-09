@@ -9,7 +9,9 @@ import styles from './CartP.module.scss'
 const CartP = () => {
     const { cart } = useCart()
     window.scrollTo({top: 0})
-
+    const submit = (e) => {
+        e.preventDefault()
+    } 
   return (
     <>
     <section id={styles.cart}>
@@ -20,11 +22,28 @@ const CartP = () => {
                 <p>Cart</p>
             </div>
             { cart.length > 0 && 
+            <>
             <div className={styles.cart}>
                 {cart.map(product => (
                     <CartProduct {...product} key={product.id}/>
                 ))}
             </div>
+            <div className={styles.cart_check}>
+                <div className={styles.cart_check_coupon}>
+                    <form onSubmit={submit}>
+                        <input type="text" placeholder="Coupon Code"/>
+                        <button type="submit">Apply Coupon</button>
+                    </form> 
+                </div>
+                <div className={styles.cart_check_checkout}>
+                    <h4>Cart Total</h4>
+                    <p>Subtotal: <span>150$</span></p>
+                    <p>Shipping: <span>Free</span></p>
+                    <p>Total: <span>110$</span></p>
+                    <button>Procees to checkout</button>
+                </div>
+            </div>
+            </>
             }
             { cart.length < 1 &&
             <div className={styles.empty_cart}>
