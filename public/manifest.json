@@ -3,17 +3,17 @@
   "name": "Shopify",
   "icons": [
     {
-      "src": "navbar_logo4.svg",
+      "src": "https://icons8.com/icon/96l3nAaT_nda/shopify",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "navbar_logo4.svg",
+      "src": "https://icons8.com/icon/96l3nAaT_nda/shopify",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "navbar_logo4.svg",
+      "src": "https://icons8.com/icon/96l3nAaT_nda/shopify",
       "type": "image/png",
       "sizes": "512x512"
     }
