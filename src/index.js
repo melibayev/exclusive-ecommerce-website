@@ -12,13 +12,13 @@ import { ScrolledProvider } from './components/contexts/scrollContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ScrolledProvider>
-      <CartProvider>
-        <WishlistProvider>
-          <App />
-        </WishlistProvider>
-      </CartProvider>
-    </ScrolledProvider>
+      <ScrolledProvider>
+        <CartProvider>
+          <WishlistProvider>
+              <App />
+          </WishlistProvider>
+        </CartProvider>
+      </ScrolledProvider>
   </React.StrictMode>
 );
 

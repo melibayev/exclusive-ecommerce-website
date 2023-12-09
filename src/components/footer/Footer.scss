@@ -134,13 +134,14 @@ footer {
   bottom: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 12px;
+  column-gap: 8px;
   width: 100%;
   padding: 16px;
   z-index: 100;
-  border: 1px solid #828282;
-  border-radius: 12px 12px 0 0;
+  // border: 1px solid #828282;
+  border-radius: 8px 8px 0 0;
   background-color: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: none;
   &_items {
     position: relative;
@@ -151,10 +152,10 @@ footer {
     row-gap: 4px;
     color: #828282;
     svg {
-      font-size: 24px;
+      font-size: 22px;
     }
     p {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 500;
     }
   }

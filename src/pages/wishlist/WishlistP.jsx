@@ -8,7 +8,6 @@ import { NavLink } from "react-router-dom";
 const WishlistP = () => {
   const { wishlist } = useWishlist()
   const wishlistTotal = wishlist.length
-  window.scrollTo({top: 0})
   return (
     <section id={styles.wishlist}>
         <div className="container">

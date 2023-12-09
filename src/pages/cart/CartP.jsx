@@ -7,8 +7,8 @@ import { useCart } from '../../components/contexts/cartContext'
 import styles from './CartP.module.scss'
 
 const CartP = () => {
-    const { cart } = useCart()
-    window.scrollTo({top: 0})
+    const { cart, totalPrice } = useCart()
+    
     const submit = (e) => {
         e.preventDefault()
     } 
@@ -37,7 +37,7 @@ const CartP = () => {
                 </div>
                 <div className={styles.cart_check_checkout}>
                     <h4>Cart Total</h4>
-                    <p>Subtotal: <span>150$</span></p>
+                    <p>Subtotal: <span>{totalPrice}</span></p>
                     <p>Shipping: <span>Free</span></p>
                     <p>Total: <span>110$</span></p>
                     <button>Procees to checkout</button>
