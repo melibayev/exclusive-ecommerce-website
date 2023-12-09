@@ -350,7 +350,7 @@ const HomeP = () => {
       <section id={styles.home_banner}>
         <div className="container">
           <div className={styles.home_banner}>
-              <Slide direction="up" triggerOnce>
+              <Slide direction="left" triggerOnce>
             <div className={styles.home_banner_info}>
               <div className={styles.home_banner_info_logo}>
                 <img src={APPLE} alt="" />
@@ -363,7 +363,7 @@ const HomeP = () => {
               <p>Shop Now</p>
             </div>
               </Slide>
-              <Slide direction="up" triggerOnce>
+              <Slide direction="right" triggerOnce>
             <div className={styles.home_banner_img}>
               <img src={IPHONE} alt="" />
             </div>
@@ -504,7 +504,7 @@ const HomeP = () => {
                 </div>
               </Slide>
               <div className={styles.new_products_items_right}>
-                <Slide direction="left" triggerOnce>
+                <Slide direction="right" triggerOnce>
                   <div className={styles.new_products_item_top}>
                     <img src={NEWPRODUCT2} alt="" />
                     <div className={styles.product_info}>
