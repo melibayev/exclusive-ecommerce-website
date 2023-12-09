@@ -504,7 +504,7 @@ const HomeP = () => {
                 </div>
               </Slide>
               <div className={styles.new_products_items_right}>
-                <Slide direction="right" triggerOnce>
+                <Slide direction="left" triggerOnce>
                   <div className={styles.new_products_item_top}>
                     <img src={NEWPRODUCT2} alt="" />
                     <div className={styles.product_info}>
