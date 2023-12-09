@@ -3,18 +3,18 @@
   "name": "Shopify",
   "icons": [
     {
-      "src": "https://icons8.com/icon/96l3nAaT_nda/shopify",
+      "src": "./navbar_logo4.svg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/svg"
     },
     {
-      "src": "https://icons8.com/icon/96l3nAaT_nda/shopify",
-      "type": "image/png",
+      "src": "./navbar_logo4.svg",
+      "type": "image/svg",
       "sizes": "192x192"
     },
     {
-      "src": "https://icons8.com/icon/96l3nAaT_nda/shopify",
-      "type": "image/png",
+      "src": "./navbar_logo4.svg",
+      "type": "image/svg",
       "sizes": "512x512"
     }
   ],
