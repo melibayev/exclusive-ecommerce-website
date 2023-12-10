@@ -1,19 +1,29 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Shopify",
+  "name": "Shopify",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "/images/icons8-shopify-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
     },
     {
-      "src": "logo192.png",
+      "src": "/images/icons8-shopify-96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/images/icons8-shopify-128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/images/icons8-shopify-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "/images/icons8-shopify-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
