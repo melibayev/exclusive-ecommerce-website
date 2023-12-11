@@ -1,0 +1,111 @@
+#sign_up {
+  padding-top: 200px;
+  padding-bottom: 140px;
+  @media (max-width: 0px) {
+    background: url("../../assets/images/login_img.png") no-repeat;
+    background-size: cover;
+  }
+}
+
+.sign_up {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  column-gap: 80px;
+  align-items: center;
+  @media (max-width: 1100px) {
+    &_img {
+      display: none;
+    }
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+  &_img {
+    img {
+      max-width: 600px;
+      object-fit: contain;
+    }
+  }
+  &_info {
+    h2 {
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+    & > p {
+      margin-bottom: 32px;
+    }
+    form {
+      input {
+        display: block;
+        width: 370px;
+        padding: 8px 0;
+        margin-bottom: 32px;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.4);
+        border: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+        &::placeholder {
+          font-size: 16px;
+          color: rgba(0, 0, 0, 0.4);
+        }
+      }
+      button {
+        padding: 16px 48px;
+        width: 370px;
+        margin-bottom: 16px;
+        border-radius: 4px;
+        background-color: #db4444;
+      }
+      button:nth-child(4) {
+        font-size: 16px;
+        color: #fafafa;
+      }
+      button:nth-child(5) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        border-radius: 4px;
+        background-color: transparent;
+        img {
+          width: 24px;
+          height: 24px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+    p:nth-child(4) {
+      color: #000;
+      text-align: center;
+      margin: 0;
+      span {
+        display: inline-block;
+        margin-left: 8px;
+        text-decoration: underline;
+      }
+    }
+    @media (max-width: 1100px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (max-width: 578px) {
+      h2 {
+        margin-bottom: 4px;
+      }
+      form {
+        input, button {
+            max-width: 300px;
+        }
+        button {
+          padding: 12px 32px;
+        }
+      }
+    }
+  }
+}

@@ -51,10 +51,12 @@ const Footer = () => {
             {wishlistTotal > 0 && <div className="wishlist_number">{wishlistTotal}</div>}
           </li>
           </NavLink>
+          <NavLink to={'/sign-up'}>
           <li className='footer_mobile_items'>
             <FaRegUser />
             <p>Account</p>
           </li>
+          </NavLink>
         </ul>
       </div>
       <div className="container">
@@ -105,7 +107,7 @@ const Footer = () => {
       <div className="container">
         <div className={`footer_menu ${navbar ? 'opened' : ''} ${isScrolled ? 'scrolled' : ''}`}>
           <ul className="footer_menu_items">
-              <li className="footer_menu_link">Home</li>
+              <NavLink to={'/'}><li className="footer_menu_link">Home</li></NavLink>
               <li className="footer_menu_link">About</li>
               <li className="footer_menu_link">Contact</li>
           </ul>
