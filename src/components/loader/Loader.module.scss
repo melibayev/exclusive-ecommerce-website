@@ -12,14 +12,14 @@
   .preloader {
     position: absolute;
     top: calc(50% - 100px);
-    left: calc(50% - 165px);
+    left: calc(50% - 170px);
     max-width: 20em;
     width: 100%;
   }
   
   .preloader__text {
       font-size: 24px;
-      margin-left: 10px;
+      margin-left: 14px;
       text-align: center;
       color: rgba(0, 0, 0, 0.3);
       animation: msg 5s linear forwards;
