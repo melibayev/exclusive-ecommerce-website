@@ -16,6 +16,7 @@ import { useCart } from "../contexts/cartContext";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useScrolled } from "../contexts/scrollContext";
+import { useNavbar } from "../contexts/navbarContext";
 
 const Footer = () => {
   const { wishlist } = useWishlist()
@@ -24,16 +25,12 @@ const Footer = () => {
   const cartTotal = cart.length
 
   const isScrolled = useScrolled()
-  const [navbar, setNavbar] = useState(false)
-
-  const navbarHandle = () => {
-    setNavbar(!navbar)
-  }
+  const { navbar, toggleNavbar } = useNavbar()
   return (
     <footer>
       <div className="container">
         <ul className="footer_mobile">
-          <li className='footer_mobile_items' onClick={navbarHandle}>
+          <li className='footer_mobile_items' onClick={toggleNavbar}>
             {navbar ? <FaXmark /> : <RxHamburgerMenu />}
             <p>Catalog</p>
           </li>
@@ -51,7 +48,7 @@ const Footer = () => {
             {wishlistTotal > 0 && <div className="wishlist_number">{wishlistTotal}</div>}
           </li>
           </NavLink>
-          <NavLink to={'/sign-up'}>
+          <NavLink to={'sign-up'}>
           <li className='footer_mobile_items'>
             <FaRegUser />
             <p>Account</p>
@@ -108,8 +105,8 @@ const Footer = () => {
         <div className={`footer_menu ${navbar ? 'opened' : ''} ${isScrolled ? 'scrolled' : ''}`}>
           <ul className="footer_menu_items">
               <NavLink to={'/'}><li className="footer_menu_link">Home</li></NavLink>
-              <li className="footer_menu_link">About</li>
-              <li className="footer_menu_link">Contact</li>
+              <NavLink to={'/about'}><li className="footer_menu_link">About</li></NavLink>
+              <NavLink to={'/contact'}><li className="footer_menu_link">Contact</li></NavLink>
           </ul>
         </div>
       </div>

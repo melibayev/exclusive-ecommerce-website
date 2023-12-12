@@ -1,0 +1,188 @@
+// About us banner (start)
+#about_us {
+    padding-top: 200px;
+}
+
+.about_us_title {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    font-size: 14px;
+    margin-bottom: 80px;
+    user-select: none;
+    p {
+      opacity: 0.5;
+      color: #000;
+    }
+    p:last-child {
+      opacity: 1;
+    }
+    @media (max-width: 578px) {
+      margin-bottom: 40px;
+    }
+}
+
+.about_us_banner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    column-gap: 50px;
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    &_info {
+        h1 {
+            font-size: 54px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+        p {
+            max-width: 520px;
+            margin-bottom: 16px;
+        }
+        @media (max-width: 900px) {
+            p {
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 578px) {
+            h1 {
+                font-size: 36px;
+                margin-bottom: 24px;
+            }
+        }
+    }
+    &_img {
+        img {
+            width: 500px;
+        }
+        @media (max-width: 578px) {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+// About us banner (end)
+
+
+// Company details (start)
+#company_details {
+    padding-top: 100px;
+  }
+  .company_details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 90px;
+    row-gap: 24px;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    @media (max-width: 578px) {
+      flex-direction: column;
+    }
+    &_item {
+      &_logo {
+        width: 300px;
+        height: 120px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+      &_description {
+        text-align: center;
+        h4 {
+          font-size: 20px;
+          font-weight: 600;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #000;
+  }
+  
+  .item img {
+    width: 100%;
+  }
+  
+  .circle {
+    border-radius: 50%;
+    background-color: #2f2e30;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    opacity: 0;
+    animation: scaleIn 3s infinite ease-in-out  ;
+    animation-delay: 1s;
+  }
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.45, 0.45);
+      opacity: 0.2;
+    }
+    to {
+      transform: scale(0.8, 0.8);
+      opacity: 0;
+    }
+  }
+  
+  // Company details (end)
+
+//   Employee details (start)
+#employee_details {
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+.employee {
+    &_details {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 30px;
+        @media (max-width: 900px) {
+            grid-template-columns: 1fr 1fr;
+            row-gap: 30px;
+        }
+        @media (max-width: 578px) {
+            grid-template-columns: 1fr;
+        }
+    }
+    &_img {
+        img {
+            width: 100%;
+        }
+        margin-bottom: 32px;
+        @media (max-width: 578px) {
+            margin-bottom: 16px;
+        }
+    }
+    &_info {
+        h4 {
+            font-size: 34px;
+            font-weight: 500;
+        }
+        @media (max-width: 578px) {
+            h4 {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+
+//   Employee details (end)

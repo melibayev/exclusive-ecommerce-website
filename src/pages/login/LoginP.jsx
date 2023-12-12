@@ -1,6 +1,5 @@
 import styles from './LoginP.module.scss'
 import PAGEIMG from '../../assets/images/login_img.png'
-import GOOGLEICON from '../../assets/images/Icon-Google.svg'
 import { NavLink } from 'react-router-dom'
 
 const LoginP = () => {
@@ -20,7 +19,7 @@ const LoginP = () => {
                         <input type="password" placeholder='Password'/>
                         <button>Login</button>
                     </form>
-                    <p>Do not have an account? <NavLink to={'sign-up'}><span>Sign Up</span></NavLink></p>
+                    <p>Do not have an account? <NavLink to={'/sign-up'}><span>Sign Up</span></NavLink></p>
                 </div>
             </div>
         </div>

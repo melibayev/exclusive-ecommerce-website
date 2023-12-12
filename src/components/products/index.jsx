@@ -30,7 +30,7 @@ const Product = ({ name, img, price, rating, id }) => {
       <div className={styles.card__description}>
         <h4>{name}</h4>
         <div className={styles.card__price}>
-          <p>{price}</p>
+          <p>{price}$</p>
           <div>
             {Array.from({ length: 5 }, (_, index) => (
               <FaStar key={index} color={index < rating ? "#FFAD33" : "gray"} />

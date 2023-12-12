@@ -45,8 +45,8 @@ const Header = () => {
             </div>
             <ul className="navbar-middle">
                 <NavLink to={'/'}><li>Home</li></NavLink>
-                <NavLink><li>Contact</li></NavLink>
-                <NavLink><li>About</li></NavLink>
+                <NavLink to={'/contact'}><li>Contact</li></NavLink>
+                <NavLink to={'/about'}><li>About</li></NavLink>
                 <NavLink to={'/sign-up'}><li>Sign Up</li></NavLink>
             </ul>
             <ul className="navbar-right">

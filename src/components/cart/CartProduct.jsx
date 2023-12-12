@@ -44,7 +44,7 @@ const decrease = () => {
             </div>
             <div className={styles.product_price}>
                 <span>Price for 1 pc</span> 
-                <p>{price}</p>
+                <p>{price}$</p>
             </div>
             <div className={styles.product_piece}>
                 <button onClick={decrease}>-</button>
@@ -53,7 +53,7 @@ const decrease = () => {
             </div>
             <div className={styles.product_totalPrice}>
                 <span>Total</span>
-                <p>{productPrice}</p>
+                <p>{productPrice}$</p>
             </div>
             <div className={styles.product_delete} onClick={() => removeFromCart(id)}>
                 <FaRegTrashAlt />
